@@ -1,0 +1,299 @@
+/* 
+Website designed by Livable Cities Studio 
+http://livablecitiesstudio.com/
+*/
+
+/* importing font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,800|Roboto:300&display=swap');
+
+:root {
+    --headingStyle: Montserrat, Arial, Helvetica, sans-serif; 
+    --bodyStyle: Roboto, Arial, Helvetica, sans-serif; 
+    --textColor: #191919;
+    --dark: #322925;
+    --yellow: #eac761;
+    --red: #d1532d;
+    --teal: #4db6ac;
+    --vintage: #91C09E;
+    --blue: #20bdca;
+    --brown: #7d7769;
+    --green: #d4e057;
+    --darkgrey: #666666;
+}
+
+::selection{
+    background-color: yellow;
+}
+
+/* reset css */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 80%;
+    max-width: var(--maxWidth);
+    margin: 3em auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--headingStyle);
+    font-weight: 300;
+    color: var(--textColor);
+    margin-bottom: 1em;
+}
+
+h2{
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+h4{
+    margin: 2em 0 1em 0;
+}
+
+p, ul, ol{
+    font-family: var(--bodyStyle);
+    font-weight: 300;
+    /* color: var(--textColor); */
+    margin-bottom: 1em;
+}
+
+p:last-child{
+    margin-bottom: 3em;
+}
+
+a{
+    text-decoration: none;
+    color: #888;
+}
+
+a:hover{
+    transition: 400ms ease-in;
+    color: var(--textColor);
+}
+
+button{
+    font-family: var(--headingStyle);
+    font-weight: 300;
+    box-shadow: none;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 30px;
+    transition: 400ms ease-in;
+    text-transform: uppercase;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+section {
+    clear: both;
+    margin: 0 auto;
+}
+
+section:last-child{
+    margin-bottom: 6em;
+}
+
+/* ------------------------------------------------------------------- */
+
+header{
+    position: fixed;
+    top: 0;
+    /* display: flex; */
+    width: 100%;
+    height: 60px;
+    color: white;
+    background-color: var(--dark);
+    z-index: 2;
+}
+
+header a{
+    color: white;
+}
+
+.web-heading, header ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:0;
+    height: 60px;
+}
+
+.web-heading{
+    float: left;
+    padding-left: 6em;
+}
+
+.web-heading a:hover{
+    color: white
+}
+
+header ul{
+    float: right;
+}
+
+header nav li {
+    font-family: var(--bodyStyle);
+    text-decoration: none;
+    list-style: none;
+    padding-right: 2em;
+}
+
+header nav ul a:hover{
+    color: var(--yellow);
+    padding-bottom: 13px;
+    border-bottom: 7px solid var(--yellow);
+}
+
+/* --------------------------------------------------------- */
+
+.hero{
+    margin-top: 3em;
+    background-image: url('../img/hero-background.png');
+    background-position: left;
+    background-size: cover;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.hero-content{
+    margin: 6em auto;
+    width: 80%;
+    max-width: var(--maxWidth);
+}
+
+.logo{
+    width: 160px;
+}
+
+.hero h1{
+    font-size: 3em;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0;
+}
+
+.hero p{
+    color: white;
+    font-size: 1.5em;
+}
+
+.cta button {
+    border: 1px solid white;
+    margin-right: 1em; 
+}
+
+.cta .mp-btn:hover,
+.cta .pdf-btn:hover {
+    color: white;
+    background-color: var(--dark);
+    border-color: var(--dark);
+}
+
+.pdf-btn{
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* ---------------------------------------------------------------------- */
+
+.goals-vision{
+    position: relative;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 4em;
+}
+
+/* ---------------------------------------------------------------------- */
+
+.recommendations{
+    /* background-color: pink; */
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-items: center;
+    margin-top: 5em;
+    padding-top: 5em;
+    border-top: 1px solid var(--yellow);
+}
+
+.recommendations img{
+    width: 100%;
+}
+
+.recommendations h2 {
+    margin-top: 1.3em;
+    margin-bottom: 0.5em;
+}
+
+.section-number{
+    position: absolute;
+    font-size: 5em;
+    font-weight: 800;
+    color: var(--yellow);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.recommendations button{
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--yellow);
+}
+
+.recommendations button:hover{
+    /* transition: 400ms ease-in; */
+    background-color: var(--red);
+}
+
+.recommendations ul{
+    margin-left: 1em;
+}
+
+/* --------------------------------------------------- */
+
+.cta-footer-container{
+    background-color: #91C09E;
+    margin: 6em 0 0 0;
+}
+
+.cta-footer-container-width{
+    width: 80%;
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+}
+
+.cta-footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    height: 150px;
+    align-content: center;
+
+    /* background-color: pink; */
+}
+
+.cta-footer-container h3{
+    color: white;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.cta-footer-container button, .cta-footer h3{
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 760px) {
+    header nav {
+        display: none;
+    }
+}
