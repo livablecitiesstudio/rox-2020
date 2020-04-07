@@ -40,7 +40,9 @@ main{
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
     font-family: var(--headingStyle);
     font-weight: 300;
     color: var(--textColor);
@@ -53,7 +55,12 @@ h2{
 }
 
 h4{
+    font-weight: 800;
     margin: 2em 0 1em 0;
+}
+
+h5{
+    font-weight: 800;
 }
 
 p, ul, ol{
@@ -189,6 +196,7 @@ header nav ul a:hover{
 .cta button {
     border: 1px solid white;
     margin-right: 1em; 
+    margin-bottom: 1em;
 }
 
 .cta .mp-btn:hover,
@@ -219,7 +227,7 @@ header nav ul a:hover{
     /* background-color: pink; */
     display: grid;
     grid-gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
     margin-top: 5em;
     padding-top: 5em;
@@ -293,7 +301,17 @@ header nav ul a:hover{
 }
 
 @media screen and (max-width: 760px) {
+    .web-heading {
+        padding-left: 3em;
+        width: 80%;
+    }
+    .hero{
+        height: 700px;
+    }
     header nav {
         display: none;
+    }
+    .cta-footer{
+        height: 250px;
     }
 }

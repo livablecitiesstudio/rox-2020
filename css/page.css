@@ -1,5 +1,6 @@
 :root{
     --section-color: var(--red);
+    --project-type: var(--green);
 }
 
 .toc-nav {
@@ -32,6 +33,11 @@
 .toc-nav li,
 aside li {
     list-style: none;
+}
+
+.current{
+    color: var(--textColor);
+    font-weight: 800;
 }
 
 /* --------hamburger icon--------- */
@@ -146,12 +152,13 @@ main {
 }
 
 .content-wrap h3 {
-    padding-top: 4em;
+    padding-top: 2em;
     font-weight: 800;
 }
 
 main img {
     width: 100%;
+    margin-bottom: 3em;
 }
 
 .footnote {
@@ -175,7 +182,110 @@ a.engagement-btn:hover{
     background-color: var(--dark);
 }
 
+/* -------------------------------------------------------------------- */
+
+.life-cycle-chart{
+    margin-top: 2em;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.cycle-description h3 {
+    padding-top: 1em;
+}
+
+.cycle-description{
+    display: block;
+    /* align-self: center; */
+    padding: 1em;
+    text-align: center;
+}
+
+#development .cycle-description {
+    height: 300px;
+    background-image: url('../img/project-life-cycle-chart-development.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: -40px;
+
+}
+
+#design .cycle-description {
+    background: #2980b9;
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); */
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom right, #6dd5fa, #ffffff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.project-type {
+    display: inline-block;
+    margin-bottom: 3px;
+    background: var(--project-type);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
 /* ---------------------------------------------------------------------- */
+
+table, th, td {
+    border-bottom: 1px solid var(--darkgrey);
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: 300;
+}
+
+th, td{
+    padding: 20px 5px;
+}
+
+.table-top-header{
+    border-bottom: 4px solid var(--green);
+}
+
+.content-wrap table h3{
+    font-size: 0.9em;
+    text-transform: uppercase;
+    /* line-height: 0.3em; */
+    align-self: center;
+    padding: 0;
+    margin: 0;
+}
+
+.table-header{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 0;
+}
+
+.life-cycle-phasing {
+    font-size: 12px;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+}
+
+.phase{
+    background-color: #f1f5f1;
+    padding: 3px;
+}
+
+.project-type{
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #999;
+}
+
+/* ------------------------------------------------------------------- */
 
 .footer-nav-container {
     background-color: var(--section-color);
@@ -285,10 +395,15 @@ footer a:hover{
         margin: 0 auto;
     }
 
-    .footer-nav, .footer-container{
+    .footer-nav,
+    .footer-container {
         width: 90%;
         padding: 2em 0 0 0;
         margin: 0 auto;
+    }
+
+    .footer-container{
+        padding-top: 0;
     }
 
     .lcs{
@@ -302,11 +417,47 @@ footer a:hover{
 }
 
 @media screen and (max-width: 760px) {
+    .web-heading {
+        padding-left: 6em;
+        width: 100%;
+    }
+
     .toc-nav li {
         margin-top: 1em;
     }
 
     .section-title {
         margin-top: 1.5em;
+    }
+
+    table, tr, th{
+        font-size: 13px;
+    }
+
+     .project-type{
+         font-size: 11px;
+     }
+
+    .circle{
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media screen and(max-width: 530px){
+    #development .cycle-description {
+        background-color: red;
+        height: 1000px;
+        background-position-x: 50%;
+        background-position-y: -500px;
+
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+
+    .footer-nav{
+        font-size: 0.85em;
     }
 }

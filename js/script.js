@@ -4,8 +4,11 @@
     initHamburger();
     initSectionToc();
     initFooterNav();
-    // adjustAnchorScroll();
+    adjustAnchorScroll();
     initChapterColor();
+    initFooterCredit();
+    currentPageHighlight();
+    projectTypeColor();
 
     function initHamburger() {
         let hamburger = {
@@ -19,14 +22,16 @@
             }
         };
 
+
         hamburger.navToggle.addEventListener('click', function (e) {
             hamburger.doToggle(e);
         });
-
     }
 
     function initTOC() {
         const FIXED_MENU = document.querySelector('.toc-nav ul');
+
+        if(!FIXED_MENU) return;
 
         class Page {
             constructor(name, className, href) {
@@ -101,9 +106,9 @@
             ),
 
             openSpace: new Page(
-                'Open Space', 
+                'Open Space',
                 ["subsection-title", "toc-footer-nav"]
-            ), 
+            ),
 
             neighborhoodParks: new Page(
                 'Neighborhood Parks',
@@ -113,7 +118,7 @@
             programming: new Page(
                 'Programming',
                 ["subsection-title", "toc-footer-nav"]
-            ), 
+            ),
 
             recreation: new Page(
                 'Recreation',
@@ -145,15 +150,31 @@
                 ["section-title", "toc-footer-nav"]
             ),
 
-            implementation: new Page(
-                'Implementation Strategies',
-                ["section-title", "toc-footer-nav"]
+            implementationStrategyDivider: new Page(
+                'Implementation',
+                ["section-title"],
+                'implementation-strategy.html'
             ),
 
-            // about: new Page(
-            //     'about',
-            //     ["section-title", "toc-footer-nav"]
-            // )
+            implementationStrategy: new Page(
+                'Implementation Strategy',
+                ["subsection-title", "toc-footer-nav"],
+            ),
+
+            projectLifeCycle: new Page(
+                'Project Life Cycle',
+                ["subsection-title", "toc-footer-nav"],
+            ),
+
+            implementationMatrix: new Page(
+                'Implementation Matrix',
+                ["subsection-title", "toc-footer-nav"],
+            ),
+
+            about: new Page(
+                'About',
+                ["section-title", "toc-footer-nav"]
+            )
         };
 
         for (let page in PAGES) {
@@ -174,14 +195,18 @@
     //populate section toc list
     function initSectionToc() {
         const SECTION_TOC_LIST = document.querySelector('.section-toc ul');
+
+        if (!SECTION_TOC_LIST) return; 
+
         const SUBSECTIONS = Array.from(document.querySelectorAll('.content-wrap section'));
         const SUBSECTIONS_TITLE = Array.from(document.querySelectorAll('.content-wrap section h3'));
+        
 
         for (let i = 0; i < SUBSECTIONS.length; i++) {
             let li = document.createElement('li');
             let anchor = document.createElement('a');
 
-            anchor.appendChild(document.createTextNode(SUBSECTIONS_TITLE[i].innerHTML));
+            anchor.appendChild(document.createTextNode(SUBSECTIONS_TITLE[i].innerText));
 
             anchor.setAttribute('href', `#${SUBSECTIONS[i].id}`)
 
@@ -194,35 +219,59 @@
     //auto populate footer navigation
     function initFooterNav() {
         const TOC_FOOTER = Array.from(document.querySelectorAll('.toc-footer-nav'));
+
+        if (TOC_FOOTER == '') return; 
+
         let currentSection = document.querySelector('.content-wrap h1').innerHTML;
         let previousSection = document.querySelector('#prev-section');
+        let previousSectionLabel = document.querySelector('#prev-section-label');
+
         let nextSection = document.querySelector('#next-section');
+        let nextSectionLabel = document.querySelector('#next-section-label');
+
+        // nextSection.innerHTML = "";
+        // previousSection.innerHTML = "";
 
         if (currentSection.includes('&amp;')) currentSection = currentSection.replace('&amp;', '&');
         //find index of currentSection in TOC
         //locate previous and next indices
         for (let i = 0; i < TOC_FOOTER.length; i++) {
             if (TOC_FOOTER[i].innerText.toLowerCase() === currentSection.toLowerCase()) {
-                previousSection.innerHTML = TOC_FOOTER[i - 1].innerHTML;
-                nextSection.innerHTML = TOC_FOOTER[i + 1].innerHTML;
+                if (TOC_FOOTER[i - 1]) {
+                    previousSection.innerHTML = TOC_FOOTER[i - 1].innerHTML;
+                } else {
+                    previousSection.innerHTML = " ";
+                    previousSectionLabel.innerHTML = " ";
+                }
+
+                if (TOC_FOOTER[i + 1]) {
+                    nextSection.innerHTML = TOC_FOOTER[i + 1].innerHTML;
+                } else {
+                    nextSection.innerHTML = " ";
+                    nextSectionLabel.innerHTML = " ";
+                }
+
             }
         }
     }
 
     function initChapterColor() {
-        const CHAPTER = document.querySelector('.section-label').innerHTML || "";
+        const CHAPTER = document.querySelector('.section-label') || '';
+
+        if (CHAPTER == '') return; 
+
         let color = '#fff';
-        switch (CHAPTER.toLowerCase()) {
+        switch (CHAPTER.innerText.toLowerCase()) {
             case 'introduction':
                 color = '#4db6ac';
                 break;
             case 'master plan recommendations':
                 color = 'var(--yellow)';
                 break;
-            case "design guidelines &amp; standards":
+            case "design guidelines & standards":
                 color = 'var(--blue)';
                 break;
-            case 'irrigation &amp; maintenance':
+            case 'irrigation & maintenance':
                 color = 'var(--brown)';
                 break;
             case 'implementation strategy':
@@ -234,6 +283,101 @@
 
         return document.documentElement.style
             .setProperty('--section-color', color);
+    }
+
+
+    function initFooterCredit() {
+        const FOOTER_CREDIT = document.querySelector('.footer-container');
+
+        if (!FOOTER_CREDIT) return; 
+
+        FOOTER_CREDIT.innerHTML = '';
+
+        const credit = {
+            rvmd: {
+                a: 'Visit Website',
+                href: 'https://roxboroughmetrodistrict.org/',
+                p: 'Roxborough Village Metro District | ',
+                className: ['rvmd']
+            },
+
+            lcs: {
+                a: 'Design by Livable Cities Studio',
+                href: 'http://livablecitiesstudio.com/',
+                p: '',
+                className: ['lcs']
+            }
+        }
+
+        for (entity in credit) {
+            let paragraph = document.createElement('p');
+            let anchor = document.createElement('a');
+
+            paragraph.appendChild(document.createTextNode(credit[entity].p));
+            paragraph.classList.add(...credit[entity].className);
+
+            anchor.appendChild(document.createTextNode(credit[entity].a));
+            anchor.setAttribute('href', credit[entity].href);
+            anchor.setAttribute('target', '_blank');
+
+            paragraph.appendChild(anchor);
+            FOOTER_CREDIT.appendChild(paragraph);
+            // console.log(credit[entity].className);
+        }
+    }
+
+    function currentPageHighlight() {
+        const TOC_LIST = Array.from(document.querySelectorAll('.toc-nav li a'));
+        const CURRENT_PAGE = document.querySelector('.content-wrap h1');
+
+        for (let page of TOC_LIST) {
+            (page.innerText === CURRENT_PAGE.innerText) ?
+            page.classList.add('current'):
+                page.classList.remove('current');
+        }
+    }
+
+    //project type color for implementation matrix
+    function projectTypeColor() {
+        const PROJECT_TYPE = Array.from(document.querySelectorAll('.project-type'));
+
+        if(PROJECT_TYPE == "") return; 
+
+        let color = 'var(--green)';
+
+        for (let type of PROJECT_TYPE) {
+
+            switch (type.innerText.toLowerCase()) {
+                case 'open space':
+                    type.style.backgroundColor = 'var(--green)';
+                    break;
+
+                case 'trails & connectivity':
+                    type.style.backgroundColor = 'var(--teal)';
+                    type.style.color = 'white';
+                    break;
+
+                case 'programming':
+                    type.style.backgroundColor = 'var(--red)';
+                    type.style.color = 'white';
+                    break;
+
+                case 'neighborhood parks':
+                    type.style.backgroundColor = 'var(--vintage)';
+                    break;
+
+                case 'recreation':
+                    type.style.backgroundColor = 'var(--blue)';
+                    break;
+
+                case 'community center and/or pool':
+                    type.style.backgroundColor = '#0297a7';
+                    type.style.color = 'white';
+                    break;
+
+                default: type.style.backgroundColor = 'var(--green)';
+            }
+        }
     }
 
     //when click on section toc, go to id with adjusted window height
@@ -254,4 +398,3 @@
 
 
 }());
-
