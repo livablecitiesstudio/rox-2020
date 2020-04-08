@@ -402,8 +402,8 @@
 let headerNav = document.querySelector('header nav ul');
 // headerNav.innerHTML = '';
 
-window.onscroll = function(){
-    // window.location.href = window.location.pathname;
-    // window.location.href.split('#')[0];
-    if (window.location.hash) window.location.hash = "";
-}
+// window.onscroll = function(){
+//     // window.location.href = window.location.pathname;
+//     // window.location.href.split('#')[0];
+//     if (window.location.hash) window.location.hash = "";
+// }
