@@ -182,6 +182,57 @@ a.engagement-btn:hover{
     background-color: var(--dark);
 }
 
+/* ------------------------------------------------------------- */
+
+.existing-assessment{
+    margin-bottom: 1em;
+    border-bottom: 1px solid #999;
+}
+
+.existing-assessment h4, .existing-assessment p, .existing-assessment img{
+    margin: 0;
+}
+
+.assess-heading-wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    align-self: center;
+    margin-bottom: 1em;
+}
+
+.assess-content-wrapper {
+    margin-bottom: 2em;
+}
+
+.assess-content-wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+}
+
+.existing-assessment img{
+    max-width: 300px;
+}
+
+.existing-assessment:last-child{
+    margin-bottom: 8em;
+}
+
+.ranking-legend{
+    list-style: none;
+}
+
+.fa-star,
+.fa-star-half-alt {
+    color: gold;
+}
+
+.grey-star{
+    color: rgb(204, 204, 204);
+}
+
 /* -------------------------------------------------------------------- */
 
 .life-cycle-chart{
@@ -280,8 +331,9 @@ th, td{
 
 .circle{
     color: #909090;
-    width: 20px;
-    height: 20px;
+    font-size: 1.5em;
+    width: 30px;
+    height: 30px;
     border-radius: 10px;
     /* border: 1px solid #999; */
 }
