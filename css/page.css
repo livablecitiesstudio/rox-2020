@@ -279,10 +279,19 @@ th, td{
 }
 
 .circle{
+    color: #909090;
     width: 20px;
     height: 20px;
     border-radius: 10px;
-    border: 1px solid #999;
+    /* border: 1px solid #999; */
+}
+
+.fa-play-circle{
+    color: var(--blue);
+}
+
+.fa-check-circle{
+    color: rgb(88, 184, 9);
 }
 
 /* ------------------------------------------------------------------- */

@@ -398,3 +398,6 @@
 
 
 }());
+
+let headerNav = document.querySelector('header nav ul');
+// headerNav.innerHTML = '';
