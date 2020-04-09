@@ -87,10 +87,10 @@
                 'index.html',
             ),
 
-            // projectMap: new Page(
-            //     'Project Map',
-            //     ["section-title", "toc-footer-nav"]
-            // ),
+            projectMap: new Page(
+                'Project Map',
+                ["section-title", "toc-footer-nav"]
+            ),
 
             introduction: new Page(
                 'Introdcution',
@@ -103,10 +103,10 @@
                 ["subsection-title", "toc-footer-nav"]
             ),
 
-            // context: new Page(
-            //     'RVMD Context',
-            //     ["subsection-title", "toc-footer-nav"]
-            // ),
+            context: new Page(
+                'RVMD Context',
+                ["subsection-title", "toc-footer-nav"]
+            ),
 
             analysis: new Page(
                 'Community Open Space Analysis',

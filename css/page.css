@@ -196,6 +196,17 @@ a.engagement-btn:hover, .external-btn:hover{
 }
 
 /* -------------------------------------------------------------- */
+
+#project-list a{
+    color: var(--textColor);
+}
+
+#project-list a:hover{
+    color: var(--red);
+}
+
+
+/* -------------------------------------------------------------- */
 .guidelines-wrap{
     margin-top: 4em;
     display: grid;
@@ -211,8 +222,6 @@ a.engagement-btn:hover, .external-btn:hover{
 .guidelines-wrap p:last-child{
     margin-bottom: 0;
 }
-
-
 
 /* ------------------------------------------------------------- */
 
@@ -383,7 +392,7 @@ th, td{
 .board-members-wrapper{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .board-members img{
