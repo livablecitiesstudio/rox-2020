@@ -166,7 +166,7 @@ main img {
     font-style: italic;
 }
 
-a.engagement-btn{
+a.engagement-btn, .external-btn{
     font-size: 14px;
     display: inline-block;
     text-transform: uppercase;
@@ -177,9 +177,22 @@ a.engagement-btn{
     border-radius: 30px;
 }
 
-a.engagement-btn:hover{
+a.engagement-btn:hover, .external-btn:hover{
     color: white;
     background-color: var(--dark);
+}
+
+.external-btn{
+    background-color: var(--red);
+}
+
+.firm-link a{
+    color: var(--textColor);
+    transition: 400ms ease-in;
+}
+
+.firm-link a:hover{
+    color: var(--red);
 }
 
 /* -------------------------------------------------------------- */
@@ -363,6 +376,23 @@ th, td{
 
 .fa-check-circle{
     color: rgb(88, 184, 9);
+}
+
+/* ------------------------------------------------------------------- */
+
+.board-members-wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.board-members img{
+    margin-bottom: 0;
+}
+
+#contact{
+    margin-top: 3em;
+    margin-bottom: 1em;
 }
 
 /* ------------------------------------------------------------------- */

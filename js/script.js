@@ -1,5 +1,6 @@
 (function () {
-
+    initPageTitle();
+    initHeaderNavigation();
     initTOC();
     initHamburger();
     initSectionToc();
@@ -9,6 +10,13 @@
     initFooterCredit();
     currentPageHighlight();
     projectTypeColor();
+
+    function initPageTitle() {
+        const PAGE_TITLE = document.querySelector('title');
+        const PAGE_H1 = document.querySelector('main h1').innerText;
+
+        PAGE_TITLE.innerText = `${PAGE_H1} | RVMD Master Plan 2020`;
+    }
 
     function initHamburger() {
         let hamburger = {
@@ -28,10 +36,41 @@
         });
     }
 
+    function initHeaderNavigation() {
+        const HEADER_NAV = document.querySelector('header nav ul');
+        HEADER_NAV.innerHTML = '';
+
+        const headerNavBtn = {
+            about: {
+                a: 'About',
+                href: 'about.html',
+                target: ''
+            },
+
+            pdf: {
+                a: 'Downlaod PDF',
+                href: 'https://www.dropbox.com/s/m49fgrybwo1zbj9/Roxborough%20Master%20Plan_final%20draft.pdf?dl=0',
+                target: '_blank'
+            }
+        }
+
+        for (let button in headerNavBtn) {
+            let list = document.createElement('li');
+            let anchor = document.createElement('a');
+
+            anchor.appendChild(document.createTextNode(headerNavBtn[button].a));
+            anchor.setAttribute('href', headerNavBtn[button].href);
+            anchor.setAttribute('target', headerNavBtn[button].target);
+
+            list.appendChild(anchor);
+            HEADER_NAV.appendChild(list);
+        }
+    }
+
     function initTOC() {
         const FIXED_MENU = document.querySelector('.toc-nav ul');
 
-        if(!FIXED_MENU) return;
+        if (!FIXED_MENU) return;
 
         class Page {
             constructor(name, className, href) {
@@ -196,11 +235,11 @@
     function initSectionToc() {
         const SECTION_TOC_LIST = document.querySelector('.section-toc ul');
 
-        if (!SECTION_TOC_LIST) return; 
+        if (!SECTION_TOC_LIST) return;
 
         const SUBSECTIONS = Array.from(document.querySelectorAll('.content-wrap section'));
         const SUBSECTIONS_TITLE = Array.from(document.querySelectorAll('.content-wrap section h3'));
-        
+
 
         for (let i = 0; i < SUBSECTIONS.length; i++) {
             let li = document.createElement('li');
@@ -220,7 +259,7 @@
     function initFooterNav() {
         const TOC_FOOTER = Array.from(document.querySelectorAll('.toc-footer-nav'));
 
-        if (TOC_FOOTER == '') return; 
+        if (TOC_FOOTER == '') return;
 
         let currentSection = document.querySelector('.content-wrap h1').innerHTML;
         let previousSection = document.querySelector('#prev-section');
@@ -258,7 +297,7 @@
     function initChapterColor() {
         const CHAPTER = document.querySelector('.section-label') || '';
 
-        if (CHAPTER == '') return; 
+        if (CHAPTER == '') return;
 
         let color = '#fff';
         switch (CHAPTER.innerText.toLowerCase()) {
@@ -289,7 +328,7 @@
     function initFooterCredit() {
         const FOOTER_CREDIT = document.querySelector('.footer-container');
 
-        if (!FOOTER_CREDIT) return; 
+        if (!FOOTER_CREDIT) return;
 
         FOOTER_CREDIT.innerHTML = '';
 
@@ -309,7 +348,7 @@
             }
         }
 
-        for (entity in credit) {
+        for (let entity in credit) {
             let paragraph = document.createElement('p');
             let anchor = document.createElement('a');
 
@@ -341,7 +380,7 @@
     function projectTypeColor() {
         const PROJECT_TYPE = Array.from(document.querySelectorAll('.project-type'));
 
-        if(PROJECT_TYPE == "") return; 
+        if (PROJECT_TYPE == "") return;
 
         let color = 'var(--green)';
 
@@ -375,7 +414,8 @@
                     type.style.color = 'white';
                     break;
 
-                default: type.style.backgroundColor = 'var(--green)';
+                default:
+                    type.style.backgroundColor = 'var(--green)';
             }
         }
     }
@@ -391,16 +431,17 @@
         window.addEventListener("hashchange", shiftWindow);
 
         //https://developer.mozilla.org/en-US/docs/Web/API/Location/hash
-        // window.onload = function(){
-        //     if (window.location.hash) shiftWindow();
-        // }
+        window.onload = function(){
+            if (window.location.hash) shiftWindow();
+        }
     }
 
 
 }());
 
-let headerNav = document.querySelector('header nav ul');
-// headerNav.innerHTML = '';
+
+
+
 
 // window.onscroll = function(){
 //     // window.location.href = window.location.pathname;

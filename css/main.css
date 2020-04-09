@@ -99,6 +99,14 @@ button:hover{
     cursor: pointer;
 }
 
+button a {
+    color: var(--textColor);
+}
+
+button a:hover {
+    color: white;
+}
+
 section {
     clear: both;
     margin: 0 auto;
