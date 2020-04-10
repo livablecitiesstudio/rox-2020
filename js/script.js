@@ -11,6 +11,8 @@
     currentPageHighlight();
     projectTypeColor();
 
+
+    //populate page title info based on page h1
     function initPageTitle() {
         const PAGE_TITLE = document.querySelector('title');
         const PAGE_H1 = document.querySelector('main h1').innerText;
@@ -18,6 +20,7 @@
         PAGE_TITLE.innerText = `${PAGE_H1} | RVMD Master Plan 2020`;
     }
 
+    //hamburger menu
     function initHamburger() {
         let hamburger = {
             navToggle: document.querySelector('.nav-toggle'),
@@ -36,10 +39,12 @@
         });
     }
 
+    //header navigation
     function initHeaderNavigation() {
         const HEADER_NAV = document.querySelector('header nav ul');
         HEADER_NAV.innerHTML = '';
 
+        //navigation button information
         const headerNavBtn = {
             about: {
                 a: 'About',
@@ -54,6 +59,7 @@
             }
         }
 
+        //inject info into HTML tags
         for (let button in headerNavBtn) {
             let list = document.createElement('li');
             let anchor = document.createElement('a');
@@ -67,11 +73,13 @@
         }
     }
 
+    //table of contents (TOC)
     function initTOC() {
         const FIXED_MENU = document.querySelector('.toc-nav ul');
 
         if (!FIXED_MENU) return;
 
+        //create template for page info
         class Page {
             constructor(name, className, href) {
                 this.name = name;
@@ -80,6 +88,8 @@
             }
         }
 
+        //list of pages for TOC
+        //ADD NEW PAGE INTO TOC IN HERE
         const PAGES = {
             planOnAPage: new Page(
                 'Plan on A Page',
@@ -216,6 +226,7 @@
             )
         };
 
+        //inject info into HTML
         for (let page in PAGES) {
             let li = document.createElement('li');
             let anchor = document.createElement('a');
@@ -241,6 +252,7 @@
         const SUBSECTIONS_TITLE = Array.from(document.querySelectorAll('.content-wrap section h3'));
 
 
+        //inject info into HTML
         for (let i = 0; i < SUBSECTIONS_TITLE.length; i++) {
             let li = document.createElement('li');
             let anchor = document.createElement('a');
@@ -301,6 +313,7 @@
         }
     }
 
+    //identify chapter colors based on page title
     function initChapterColor() {
         const CHAPTER = document.querySelector('.section-label') || '';
 
@@ -339,6 +352,7 @@
 
         FOOTER_CREDIT.innerHTML = '';
 
+        //footer credit info
         const credit = {
             rvmd: {
                 a: 'Visit Website',
@@ -355,6 +369,7 @@
             }
         }
 
+        //inject info into HTML
         for (let entity in credit) {
             let paragraph = document.createElement('p');
             let anchor = document.createElement('a');
@@ -372,14 +387,17 @@
         }
     }
 
+    //highlight text in toc to indicate current page
     function currentPageHighlight() {
         const TOC_LIST = Array.from(document.querySelectorAll('.toc-nav li a'));
         const CURRENT_PAGE = document.querySelector('.content-wrap h1');
 
+        //if title matches list in TOC
+        //add CSS class 'current'
         for (let page of TOC_LIST) {
             (page.innerText === CURRENT_PAGE.innerText) ?
             page.classList.add('current'):
-                page.classList.remove('current');
+            page.classList.remove('current');
         }
     }
 
