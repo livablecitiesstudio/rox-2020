@@ -241,13 +241,20 @@
         const SUBSECTIONS_TITLE = Array.from(document.querySelectorAll('.content-wrap section h3'));
 
 
-        for (let i = 0; i < SUBSECTIONS.length; i++) {
+        for (let i = 0; i < SUBSECTIONS_TITLE.length; i++) {
             let li = document.createElement('li');
             let anchor = document.createElement('a');
 
             anchor.appendChild(document.createTextNode(SUBSECTIONS_TITLE[i].innerText));
 
-            anchor.setAttribute('href', `#${SUBSECTIONS[i].id}`)
+            //for maintenance matrix page (only one section)
+            //phase 1, 2, 3 all under one section tag
+            if(SUBSECTIONS.length > 1){
+                anchor.setAttribute('href', `#${SUBSECTIONS[i].id}`);
+            } else {
+                anchor.setAttribute('href', `#${SUBSECTIONS_TITLE[i].id}`)
+            }
+            
 
             li.appendChild(anchor);
 
@@ -438,10 +445,6 @@
 
 
 }());
-
-
-
-
 
 // window.onscroll = function(){
 //     // window.location.href = window.location.pathname;
