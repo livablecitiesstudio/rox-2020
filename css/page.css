@@ -1,4 +1,4 @@
-:root{
+:root {
     --section-color: var(--red);
     --project-type: var(--green);
 }
@@ -35,7 +35,7 @@ aside li {
     list-style: none;
 }
 
-.current{
+.current {
     color: var(--textColor);
     font-weight: 800;
 }
@@ -143,7 +143,8 @@ main {
     max-width: 700px;
 }
 
-.content-wrap ul, .content-wrap ol {
+.content-wrap ul,
+.content-wrap ol {
     margin-left: 1em;
 }
 
@@ -158,7 +159,7 @@ main {
 
 main img {
     width: 100%;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 .footnote {
@@ -166,7 +167,8 @@ main img {
     font-style: italic;
 }
 
-a.engagement-btn, .external-btn{
+a.engagement-btn,
+.external-btn {
     font-size: 14px;
     display: inline-block;
     text-transform: uppercase;
@@ -177,37 +179,89 @@ a.engagement-btn, .external-btn{
     border-radius: 30px;
 }
 
-a.engagement-btn:hover, .external-btn:hover{
+a.engagement-btn:hover,
+.external-btn:hover {
     color: white;
     background-color: var(--dark);
 }
 
-.external-btn{
+.engagement-btn {
+    margin-bottom: 4em !important;
+}
+
+.external-btn {
     background-color: var(--red);
 }
 
-.firm-link a{
+.firm-link a {
     color: var(--textColor);
     transition: 400ms ease-in;
 }
 
-.firm-link a:hover{
+.firm-link a:hover {
     color: var(--red);
+}
+
+.character-img{
+    background-color: #eee;
+    padding: 0.8em;
+    margin-bottom: 2em;
+}
+
+.img-caption{
+    font-size: 14px;
+    font-style: italic;
+}
+
+.character-img img, .character-img p{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.response-rate{
+    display: block;
+    width: 50%;
+    margin-bottom: 4em;
 }
 
 /* -------------------------------------------------------------- */
 
-#project-list a{
-    color: var(--textColor);
+#project-list a {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
-#project-list a:hover{
+#project-list a:hover {
     color: var(--red);
+}
+
+/* -------------------------------------------------------------- */
+.fencing-wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+}
+
+.fencing-wrapper img{
+    margin-bottom: 0;
+}
+
+.fencing-icon {
+    display: inline-block;
+    text-align: center;
+    color: white;
+    background-color: var(--textColor);
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    padding-top: 3px;
 }
 
 
 /* -------------------------------------------------------------- */
-.guidelines-wrap{
+.guidelines-wrap {
     margin-top: 4em;
     display: grid;
     grid-gap: 30px;
@@ -215,26 +269,53 @@ a.engagement-btn:hover, .external-btn:hover{
     align-content: ;
 }
 
-.guidelines-wrap h3{
+.guidelines-wrap h3 {
     padding-top: 0 !important;
 }
 
-.guidelines-wrap p:last-child{
+.guidelines-wrap p:last-child {
     margin-bottom: 0;
+}
+
+.native-plants-wrap {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.plant-tile {
+    margin-bottom: 2em;
+}
+
+.native-plants-wrap img,
+.native-plants-wrap p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.name-common {
+    font-weight: 800;
+}
+
+.name-scientific {
+    font-style: italic;
+    padding-bottom: 0.5em !important;
 }
 
 /* ------------------------------------------------------------- */
 
-.existing-assessment{
+.existing-assessment {
     margin-bottom: 1em;
     border-bottom: 1px solid #999;
 }
 
-.existing-assessment h4, .existing-assessment p, .existing-assessment img{
+.existing-assessment h4,
+.existing-assessment p,
+.existing-assessment img {
     margin: 0;
 }
 
-.assess-heading-wrapper{
+.assess-heading-wrapper {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -246,22 +327,22 @@ a.engagement-btn:hover, .external-btn:hover{
     margin-bottom: 2em;
 }
 
-.assess-content-wrapper{
+.assess-content-wrapper {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 
 }
 
-.existing-assessment img{
+.existing-assessment img {
     max-width: 300px;
 }
 
-.existing-assessment:last-child{
+.existing-assessment:last-child {
     margin-bottom: 8em;
 }
 
-.ranking-legend{
+.ranking-legend {
     list-style: none;
 }
 
@@ -270,13 +351,13 @@ a.engagement-btn:hover, .external-btn:hover{
     color: gold;
 }
 
-.grey-star{
+.grey-star {
     color: rgb(204, 204, 204);
 }
 
 /* -------------------------------------------------------------------- */
 
-.life-cycle-chart{
+.life-cycle-chart {
     margin-top: 2em;
     display: grid;
     grid-gap: 20px;
@@ -287,7 +368,7 @@ a.engagement-btn:hover, .external-btn:hover{
     padding-top: 1em;
 }
 
-.cycle-description{
+.cycle-description {
     display: block;
     /* align-self: center; */
     padding: 1em;
@@ -323,22 +404,25 @@ a.engagement-btn:hover, .external-btn:hover{
 
 /* ---------------------------------------------------------------------- */
 
-table, th, td {
+table,
+th,
+td {
     border-bottom: 1px solid var(--darkgrey);
     border-collapse: collapse;
     text-align: center;
     font-weight: 300;
 }
 
-th, td{
+th,
+td {
     padding: 20px 5px;
 }
 
-.table-top-header{
+.table-top-header {
     border-bottom: 4px solid var(--green);
 }
 
-.content-wrap table h3{
+.content-wrap table h3 {
     font-size: 0.9em;
     text-transform: uppercase;
     /* line-height: 0.3em; */
@@ -347,7 +431,7 @@ th, td{
     margin: 0;
 }
 
-.table-header{
+.table-header {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 800;
@@ -360,17 +444,17 @@ th, td{
     text-orientation: sideways;
 }
 
-.phase{
+.phase {
     background-color: #f1f5f1;
     padding: 3px;
 }
 
-.project-type{
+.project-type {
     font-size: 13px;
     font-weight: 800;
 }
 
-.circle{
+.circle {
     color: #909090;
     font-size: 1.5em;
     width: 30px;
@@ -379,27 +463,27 @@ th, td{
     /* border: 1px solid #999; */
 }
 
-.fa-play-circle{
+.fa-play-circle {
     color: var(--blue);
 }
 
-.fa-check-circle{
+.fa-check-circle {
     color: rgb(88, 184, 9);
 }
 
 /* ------------------------------------------------------------------- */
 
-.board-members-wrapper{
+.board-members-wrapper {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.board-members img{
+.board-members img {
     margin-bottom: 0;
 }
 
-#contact{
+#contact {
     margin-top: 3em;
     margin-bottom: 1em;
 }
@@ -425,21 +509,21 @@ th, td{
     text-align: right;
 }
 
-.footer-nav a{
+.footer-nav a {
     color: var(--textColor);
     opacity: 0.7;
 }
 
-.footer-nav a:hover{
+.footer-nav a:hover {
     opacity: 1;
 }
 
-.footer-nav h3{
+.footer-nav h3 {
     font-size: 1.3em;
     margin-bottom: 0;
 }
 
-.footer-nav p{
+.footer-nav p {
     font-size: 0.9em;
     margin-bottom: 0;
 }
@@ -454,7 +538,7 @@ footer {
 
 }
 
-.footer-container{
+.footer-container {
     height: 60px;
     padding-left: 350px;
     display: grid;
@@ -472,7 +556,7 @@ footer p:last-child {
     padding-right: 3em;
 }
 
-footer a:hover{
+footer a:hover {
     color: var(--yellow);
 }
 
@@ -496,7 +580,7 @@ footer a:hover{
         background-color: var(--vintage);
     }
 
-    .toc-nav a{
+    .toc-nav a {
         color: var(--textColor);
         opacity: 0.8;
     }
@@ -521,11 +605,11 @@ footer a:hover{
         margin: 0 auto;
     }
 
-    .footer-container{
+    .footer-container {
         padding-top: 0;
     }
 
-    .lcs{
+    .lcs {
         padding: 0;
     }
 
@@ -549,21 +633,23 @@ footer a:hover{
         margin-top: 1.5em;
     }
 
-    table, tr, th{
+    table,
+    tr,
+    th {
         font-size: 13px;
     }
 
-     .project-type{
-         font-size: 11px;
-     }
+    .project-type {
+        font-size: 11px;
+    }
 
-    .circle{
+    .circle {
         width: 15px;
         height: 15px;
     }
 }
 
-@media screen and(max-width: 530px){
+@media screen and(max-width: 530px) {
     #development .cycle-description {
         background-color: red;
         height: 1000px;
@@ -576,7 +662,7 @@ footer a:hover{
 @media screen and (max-width: 380px) {
 
 
-    .footer-nav{
+    .footer-nav {
         font-size: 0.85em;
     }
 }
