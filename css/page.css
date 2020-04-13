@@ -224,6 +224,35 @@ a.engagement-btn:hover,
     margin-bottom: 4em;
 }
 
+/* ------------------------------------------------------------ */
+.goal-img{
+    font-size: 3em;
+    color: white;
+    align-self: center;
+    background-position: center;
+    padding: 1em 0 2em 1em;
+    margin-top: 2em;
+    /* background-color: red; */
+}
+
+#enhance .goal-img{
+    background-image: url('../img/enhance.png');
+}
+
+#connect .goal-img{
+    background-image: url('../img/connect.png');
+}
+
+#reinvigorate .goal-img{
+    background-image: url('../img/reinvigorate.png');
+}
+
+#implement .goal-img{
+    background-image: url('../img/implement.png');
+}
+
+
+
 /* -------------------------------------------------------------- */
 
 #project-list a {
