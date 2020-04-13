@@ -15,7 +15,7 @@
     //populate page title info based on page h1
     function initPageTitle() {
         const PAGE_TITLE = document.querySelector('title');
-        const PAGE_H1 = document.querySelector('main h1').innerText;
+        const PAGE_H1 = document.querySelector('h1').innerText;
 
         PAGE_TITLE.innerText = `${PAGE_H1} | RVMD Master Plan 2020`;
     }
@@ -23,7 +23,7 @@
     //hamburger menu
     function initHamburger() {
         let hamburger = {
-            navToggle: document.querySelector('.nav-toggle'),
+            navToggle: document.querySelector('.nav-toggle') || "",
             nav: document.querySelector('.toc-nav'),
 
             doToggle: function (e) {
@@ -33,10 +33,11 @@
             }
         };
 
-
-        hamburger.navToggle.addEventListener('click', function (e) {
-            hamburger.doToggle(e);
-        });
+        if(hamburger.navToggle){
+            hamburger.navToggle.addEventListener('click', function (e) {
+                        hamburger.doToggle(e);
+        })
+        };
     }
 
     //header navigation
@@ -387,6 +388,7 @@
         }
     }
 
+
     //highlight text in toc to indicate current page
     function currentPageHighlight() {
         const TOC_LIST = Array.from(document.querySelectorAll('.toc-nav li a'));
@@ -399,6 +401,14 @@
             page.classList.add('current'):
             page.classList.remove('current');
         }
+    }
+
+    function insertAnchor(text, href, appendTo) {
+        let anchor = document.createElement('a');
+        anchor.appendChild(document.createTextNode(text));
+        anchor.setAttribute('href', href);
+        anchor.setAttribute('target', '_blank');
+        appendTo.appendChild(anchor);
     }
 
     //project type color for implementation matrix
@@ -463,6 +473,7 @@
 
 
 }());
+
 
 // window.onscroll = function(){
 //     // window.location.href = window.location.pathname;

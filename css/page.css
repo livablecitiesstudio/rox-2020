@@ -225,6 +225,10 @@ a.engagement-btn:hover,
     margin-bottom: 4em;
 }
 
+.key-map{
+    width:60%;
+}
+
 /* ------------------------------------------------------------ */
 .goal-img {
     font-size: 3em;
@@ -448,6 +452,14 @@ td {
     padding: 20px 5px;
 }
 
+th a{
+    color: white;
+}
+
+th a:hover{
+    color: var(--textColor);
+}
+
 .table-top-header {
     border-bottom: 4px solid var(--green);
 }
@@ -565,37 +577,6 @@ td {
     margin-bottom: 0;
 }
 
-footer {
-    /* position: absolute; */
-    font-size: 12px;
-    color: white;
-    background-color: var(--dark);
-    width: 100%;
-    height: 60px;
-
-}
-
-.footer-container {
-    height: 60px;
-    padding-left: 350px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    align-items: center;
-}
-
-footer p,
-footer p:last-child {
-    margin-bottom: 0;
-}
-
-.lcs {
-    text-align: right;
-    padding-right: 3em;
-}
-
-footer a:hover {
-    color: var(--yellow);
-}
 
 
 @media screen and (max-width: 1360px) {
