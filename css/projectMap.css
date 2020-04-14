@@ -1,0 +1,218 @@
+#project-map a{
+    color: white;
+}
+
+.mobile-map{
+    display: none;
+}
+.map-wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    /* width: 400px; */
+    /* height: 200px; */
+}
+
+.icon-label{
+    position: absolute;
+    display: inline-block;
+    width: 1.7em;
+    height: 1.7em;
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: white;
+    background-color: var(--textColor);
+    /* z-index: 10; */
+}
+
+.icon-label:hover{
+    background-color: var(--red);
+    transition: 300ms ease-in;
+}
+
+.icon1-1{
+    top: 15%;
+    left: 8%;
+}
+
+.icon2-1{
+    top: 36.8%;
+    left: 37.5%;
+}
+
+.icon2-2{
+    top: 52.5%;
+    left: 59%;
+}
+
+.icon2-3{
+    top: 61.5%;
+    left: 59%;
+}
+
+.icon3-1 {
+    top: 17.5%;
+    left: 26%;
+}
+
+.icon3-2 {
+    top: 27%;
+    left: 42%;
+}
+
+.icon3-3 {
+    top: 29%;
+    left: 51%;
+}
+
+.icon3-4 {
+    top: 36.5%;
+    left: 42%;
+}
+
+.icon3-5 {
+    top: 38%;
+    left: 56%;
+}
+
+.icon3-6 {
+    top: 44.3%;
+    left: 92.5%;
+}
+
+.icon3-7 {
+    top: 56%;
+    left: 24%;
+}
+
+.icon3-8 {
+    top: 63%;
+    left: 56%;
+}
+
+.icon3-9 {
+    top: 61.5%;
+    left: 50%;
+}
+
+.icon4-1 {
+    top: 53%;
+    left: 46%;
+}
+
+.icon5-1 {
+    top: 40%;
+    left: 38%;
+}
+
+.icon6-1 {
+    top: 50%;
+    left: 61%;
+}
+
+.icon7-1 {
+    top: 38%;
+    left: 67%;
+}
+
+.icon7-2 {
+    top: 57%;
+    left: 99%;
+}
+
+.icon7-3 {
+    top: 67.1%;
+    left: 95%;
+}
+
+.icon8-1 {
+    top: 17%;
+    left: 37%;
+}
+
+.icon9-1 {
+    top: 54.5%;
+    left: 75%;
+}
+
+.icon10-1 {
+    top: 41%;
+    left: 28%;
+}
+
+.icon11-1 {
+    top: 43%;
+    left: 98%;
+}
+
+.icon12-1 {
+    top: 55.5%;
+    left: 99%;
+}
+
+.icon13-1 {
+    top: 67%;
+    left: 75%;
+}
+
+.icon14-1 {
+    top: 47%;
+    left: 41%;
+}
+
+.icon15-1 {
+    top: 57%;
+    left: 52%;
+}
+
+.icon16-1 {
+    top: 49.5%;
+    left: 42%;
+}
+
+.icon17-1 {
+    top: 18.5%;
+    left: 34%;
+}
+
+.icon18-1 {
+    top: 53.5%;
+    left: 52.5%;
+}
+
+.icon19-1 {
+    top: 55.6%;
+    left: 49%;
+}
+
+.icon20-1 {
+    top: 55%;
+    left: 57%;
+}
+
+.icon21-1 {
+    top: 58%;
+    left: 59%;
+}
+
+.icon22-1 {
+    top: 60%;
+    left: 59%;
+}
+
+.icon23-1 {
+    top: 57%;
+    left: 55%;
+}
+
+@media screen and (max-width: 700px) {
+    .desktop-map{
+        display: none;
+    }
+    .mobile-map{
+        display: inline;
+    }
+}
+

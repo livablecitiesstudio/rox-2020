@@ -4,6 +4,7 @@
     initTOC();
     initHamburger();
     initSectionToc();
+    initProjectMapLabels();
     initFooterNav();
     adjustAnchorScroll();
     initChapterColor();
@@ -33,10 +34,10 @@
             }
         };
 
-        if(hamburger.navToggle){
+        if (hamburger.navToggle) {
             hamburger.navToggle.addEventListener('click', function (e) {
-                        hamburger.doToggle(e);
-        })
+                hamburger.doToggle(e);
+            })
         };
     }
 
@@ -262,12 +263,12 @@
 
             //for maintenance matrix page (only one section)
             //phase 1, 2, 3 all under one section tag
-            if(SUBSECTIONS.length > 1){
+            if (SUBSECTIONS.length > 1) {
                 anchor.setAttribute('href', `#${SUBSECTIONS[i].id}`);
             } else {
                 anchor.setAttribute('href', `#${SUBSECTIONS_TITLE[i].id}`)
             }
-            
+
 
             li.appendChild(anchor);
 
@@ -310,6 +311,107 @@
                     nextSectionLabel.innerHTML = " ";
                 }
 
+            }
+        }
+    }
+
+    function initProjectMapLabels() {
+        const MAP_ICONS = document.querySelectorAll('.icon-label a');
+
+        for (let icon of MAP_ICONS) {
+            switch (icon.innerText) {
+                case "1":
+                    icon.href = 'trails-connectivity.html#connections-state-parks';
+                    icon.title = 'Connections to Waterton Canyon, Chatfield State Park and Roxborough State Park';
+                    break;
+                case '2':
+                    icon.href = 'trails-connectivity.html#crossings';
+                    icon.title = 'Improved Pedestrian and Bike Crossings on Major Roads';
+                    break;
+                case '3':
+                    icon.href = 'trails-connectivity.html#new-paths';
+                    icon.title = 'New and Improved Paths';
+                    break;
+                case '4':
+                    icon.href = 'open-space.html#willow-creek-general';
+                    icon.title = 'Little Willow Creek Greenway - General Improvements';
+                    break;
+                case '5':
+                    icon.href = 'open-space.html#willow-creek-spillway';
+                    icon.title = 'Little Willow Creek - Upper and Lower Pond Crossing and Spillway/Embankment';
+                    break;
+                case '6':
+                    icon.href = 'open-space.html#rampart-range-open-space';
+                    icon.title = 'Rampart Range Road Linear Open Space';
+                    break;
+                case '7':
+                    icon.href = 'open-space.html#small-open-space';
+                    icon.title = 'Small Neighborhood Open Spaces';
+                    break;
+                case '8':
+                    icon.href = 'neighborhood-parks.html#chatfield-farms';
+                    icon.title = 'Chatfield Farms Park';
+                    break;
+                case '9':
+                    icon.href = 'neighborhood-parks.html#crystal-lake-park';
+                    icon.title = 'Crystal Lake Park';
+                    break;
+                case '10':
+                    icon.href = 'neighborhood-parks.html#imperial-park';
+                    icon.title = 'Imperial Park';
+                    break;
+                case '11':
+                    icon.href = 'neighborhood-parks.html#mule-deer-park';
+                    icon.title = 'Mule Deer Park';
+                    break;
+                case '12':
+                    icon.href = 'neighborhood-parks.html#airplane-park';
+                    icon.title = 'Airplane Park';
+                    break;
+                case '13':
+                    icon.href = 'neighborhood-parks.html#marmot-ridge-park';
+                    icon.title = 'Marmot Ridge Park';
+                    break;
+                case '14':
+                    icon.href = 'neighborhood-parks.html#new-park';
+                    icon.title = 'New Parks and Improved Native Areas';
+                    break;
+                case '15':
+                    icon.href = 'programming.html#community-park-programming';
+                    icon.title = 'Programming for the Community Park';
+                    break;
+                case '16':
+                    icon.href = 'programming.html#active-events';
+                    icon.title = 'Active Events and Programs within the Trails and Open Space';
+                    break;
+                case '17':
+                    icon.href = 'recreation.html#soocer-field';
+                    icon.title = 'Soccer Field';
+                    break;
+                case '18':
+                    icon.href = 'recreation.html#softball';
+                    icon.title = 'Softball Field';
+                    break;
+                case '19':
+                    icon.href = 'recreation.html#volleyball';
+                    icon.title = 'Volleyball Court';
+                    break;
+                case '20':
+                    icon.href = 'recreation.html#basketball';
+                    icon.title = 'Basketball Court';
+                    break;
+                case '21':
+                    icon.href = 'recreation.html#skate-park';
+                    icon.title = 'Skate Park';
+                    break;
+                case '22':
+                    icon.href = 'recreation.html#tennis';
+                    icon.title = 'Tennis & Pickleball Courts';
+                    break;
+                case '23':
+                    icon.href = 'recreation.html#bike-bump';
+                    icon.title = 'Bike Pump Track';
+                    break;
             }
         }
     }
@@ -399,7 +501,7 @@
         for (let page of TOC_LIST) {
             (page.innerText === CURRENT_PAGE.innerText) ?
             page.classList.add('current'):
-            page.classList.remove('current');
+                page.classList.remove('current');
         }
     }
 
@@ -466,13 +568,17 @@
         window.addEventListener("hashchange", shiftWindow);
 
         //https://developer.mozilla.org/en-US/docs/Web/API/Location/hash
-        window.onload = function(){
+        window.onload = function () {
             if (window.location.hash) shiftWindow();
         }
     }
 
 
 }());
+
+
+
+
 
 
 // window.onscroll = function(){
