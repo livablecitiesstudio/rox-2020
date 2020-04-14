@@ -54,6 +54,12 @@
                 target: ''
             },
 
+            projectMap: {
+                a: 'Project Map',
+                href: 'project-map.html',
+                target: ''
+            },
+
             pdf: {
                 a: 'Downlaod PDF',
                 href: 'https://www.dropbox.com/s/m49fgrybwo1zbj9/Roxborough%20Master%20Plan_final%20draft.pdf?dl=0',
