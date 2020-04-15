@@ -132,6 +132,11 @@ main {
     margin: 0;
 }
 
+main p a{
+    color: var(--red);
+    text-decoration: underline;
+}
+
 .section-label {
     color: var(--section-color);
     font-weight: 800;

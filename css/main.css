@@ -32,6 +32,10 @@ http://livablecitiesstudio.com/
     box-sizing: border-box;
 }
 
+body, p, div, section, table, button{
+    font-family: var(--bodyStyle);
+}
+
 main{
     width: 80%;
     max-width: var(--maxWidth);
