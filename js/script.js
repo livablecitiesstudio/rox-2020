@@ -6,7 +6,7 @@
 
 window.onload = function () {
     initPageTitle();
-    initHeaderNavigation();
+    // initHeaderNavigation();
 }
 
 initSectionToc();
