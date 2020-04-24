@@ -116,7 +116,7 @@ function initTOC() {
         ),
 
         introduction: new Page(
-            'Introdcution',
+            'Introduction',
             ["section-title"],
             'plan-overview.html'
         ),
