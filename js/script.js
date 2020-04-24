@@ -1,6 +1,7 @@
 (function () {
     initTOC();
     initHamburger();
+    initHeaderNavigation()
 }());
 
 window.onload = function () {
