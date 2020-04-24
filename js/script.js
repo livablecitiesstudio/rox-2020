@@ -1,11 +1,12 @@
 (function () {
     initTOC();
     initHamburger();
-    initHeaderNavigation()
+    initHeaderNavigation();
 }());
 
 window.onload = function () {
     initPageTitle();
+    initHeaderNavigation();
 }
 
 initSectionToc();
@@ -509,7 +510,7 @@ function currentPageHighlight() {
     //if title matches list in TOC
     //add CSS class 'current'
     for (let page of TOC_LIST) {
-        (page.innerText === CURRENT_PAGE.innerText) ?
+        (page.innerText.toLowerCase() === CURRENT_PAGE.innerText.toLowerCase()) ?
         page.classList.add('current'):
             page.classList.remove('current');
     }
