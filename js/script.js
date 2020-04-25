@@ -91,6 +91,7 @@ function initTOC() {
     const FIXED_MENU = document.querySelector('.toc-nav ul');
 
     if (!FIXED_MENU) return;
+    FIXED_MENU.innerHTML = "";
 
     //create template for page info
     class Page {
