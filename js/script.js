@@ -1,15 +1,15 @@
 (function () {
-    initTOC();
-    initPageTitle();
-    initHeaderNavigation();
 
+    //must init TOC first
+    initTOC();
     initChapterColor();
     initFooterNav();
+    initHeaderNavigation();
+    initPageTitle();
 
     initHamburger();
 
     initSectionToc();
-
     initProjectMapLabels();
     adjustAnchorScroll();
 
@@ -234,7 +234,7 @@
             },
 
             pdf: {
-                a: 'Downlaod PDF',
+                a: 'Download PDF',
                 href: 'https://roxboroughmetrodistrict.org/wp-content/uploads/2020/04/Roxborough-Master-Plan_final-200415.pdf',
                 target: '_blank'
             }
