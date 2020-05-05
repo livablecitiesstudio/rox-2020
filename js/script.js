@@ -217,9 +217,12 @@
     //header navigation
     function initHeaderNavigation() {
         const HEADER_NAV = document.querySelector('header nav ul') || "";
-        if (HEADER_NAV) HEADER_NAV.innerHTML = '';
+        if (HEADER_NAV){
+             HEADER_NAV.innerHTML = '';
+        } else {
+            return;
+        }
         
-
         //navigation button information
         const headerNavBtn = {
             about: {
