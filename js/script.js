@@ -1,23 +1,23 @@
-(function () {
-    initTOC();
-    initHamburger();
-    initHeaderNavigation();
-}());
+// (function () {
+
+// }());
 
 window.onload = function () {
     initPageTitle();
     // initHeaderNavigation();
 }
 
+initTOC();
+initHamburger();
+initHeaderNavigation();
+initFooterNav();
 initSectionToc();
 initProjectMapLabels();
-initFooterNav();
 adjustAnchorScroll();
 initChapterColor();
 initFooterCredit();
 currentPageHighlight();
 projectTypeColor();
-
 
 //populate page title info based on page h1
 function initPageTitle() {
