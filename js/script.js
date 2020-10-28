@@ -239,7 +239,7 @@
 
             pdf: {
                 a: 'Download PDF',
-                href: 'https://roxboroughmetrodistrict.org/wp-content/uploads/2020/04/Roxborough-Master-Plan_final-200415.pdf',
+                href: 'https://eec1e8c8-e807-430a-9dc0-f31511a84785.usrfiles.com/ugd/eec1e8_6c9ed1d5c8cd4b549829d5b763000647.pdf',
                 target: '_blank'
             }
         }
